@@ -9,6 +9,7 @@ Datos<-subset(data,Date>="2007-02-01" & Date<="2007-02-02")
 Datos$DateTime<-strptime(paste(Datos$Date, Datos$Time, sep = " "),
                          format="%Y-%m-%d %H:%M:%S")
 Datos$DateTime<-as.POSIXct(Datos$DateTime)
+#plot4
 par(mfrow=c(2,2), mar=c(4,4,2,1), oma=c(0,0,2,0))
 with(Datos, {
   plot(Global_active_power~DateTime, type="l", ylab ="Global Active Power(Kilowatts)", xlab="")

@@ -9,6 +9,7 @@ Datos<-subset(data,Date>="2007-02-01" & Date<="2007-02-02")
 Datos$DateTime<-strptime(paste(Datos$Date, Datos$Time, sep = " "),
                          format="%Y-%m-%d %H:%M:%S")
 Datos$DateTime<-as.POSIXct(Datos$DateTime)
+#plot3
 with(Datos, {
             plot(Sub_metering_1~DateTime, type="l", ylab = "Energy sub metering", xlab="")
             lines(Sub_metering_2~DateTime, col="Red")
